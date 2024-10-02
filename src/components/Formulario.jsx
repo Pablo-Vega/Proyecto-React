@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
 import Dialog from '@mui/material/Dialog';
@@ -56,22 +56,10 @@ function FormRegistro() {
         <Box component='form' onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={6}>
-              <TextField
-                label='Nombre'
-                variant='outlined'
-                fullWidth
-                value={data.name}
-                onChange={(e) => setData({ ...data, name: e.target.value })}
-              />
+              <TextField label='Nombre' variant='outlined' fullWidth value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })}/>
             </Grid>
             <Grid item xs={6}>
-              <TextField
-                label='Apellidos'
-                variant='outlined'
-                fullWidth
-                value={data2.surname}
-                onChange={(e) => setData2({ ...data2, surname: e.target.value })}
-              />
+              <TextField label='Apellidos' variant='outlined' fullWidth value={data2.surname} onChange={(e) => setData2({ ...data2, surname: e.target.value })}/>
             </Grid>
             <Grid item xs={6}>
               <TextField label='Edad'variant='outlined' fullWidth value={data4.edad} onChange={(e) => setData4({ ...data4, edad: e.target.value })}
@@ -80,7 +68,7 @@ function FormRegistro() {
           </Grid>
 
           <Grid container spacing={2} mt={2}>
-            <Grid item xs={6}>
+            <Grid size={5} item xs={9}>
               <FormControl fullWidth>
                 <InputLabel id="single-lenguaje-label">Lenguaje de Programación</InputLabel>
                 <Select labelId="single-lenguaje-label" id="single-lenguaje"  value={selectedLenguaje} onChange={(e) => setSelectedLenguaje(e.target.value)}>
@@ -93,7 +81,7 @@ function FormRegistro() {
               </FormControl>
             </Grid>
 
-            <Grid item xs={6}>
+             <Grid item xs={6}>
               <FormControl component="fieldset">
                 <FormLabel component="legend">Género</FormLabel>
                 <RadioGroup row value={selectedGenero} onChange={(e) => setSelectedGenero(e.target.value)}>
