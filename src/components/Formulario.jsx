@@ -20,7 +20,7 @@ import FormLabel from "@mui/material/FormLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
-import { CustomButton } from "milibreria"; // Importamos tu botón personalizado
+import { CustomButton } from "milibreria"; // Asegúrate de que este botón está importado correctamente
 
 function FormRegistro() {
   const [data, setData] = useState({ name: "", brand: "" });
@@ -47,6 +47,10 @@ function FormRegistro() {
     setSelectedGenero("");
     setRating(0);
     setAcceptedTerms(false);
+  };
+
+  const handleBuenasClick = () => {
+    alert("Este botón es inútil");
   };
 
   return (
@@ -178,7 +182,7 @@ function FormRegistro() {
                 backgroundColor="red"
                 borderColor="green"
                 size="medium"
-                disabled={!acceptedTerms}
+                onClick={handleBuenasClick} // Aquí asignamos la función para mostrar el alert
               />
             </Grid>
             <Grid item xs={6}>
@@ -209,4 +213,5 @@ function FormRegistro() {
 }
 
 export default FormRegistro;
+
 
